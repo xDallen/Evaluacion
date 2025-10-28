@@ -3,7 +3,11 @@ import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react({
+      jsxRuntime: 'automatic'
+    })
+  ],
   build: {
     rollupOptions: {
       output: {
@@ -14,9 +18,8 @@ export default defineConfig({
       }
     }
   },
-  esbuild: {
-    jsx: 'automatic',
-    jsxImportSource: 'react'
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'react-router-dom']
   }
 })
 

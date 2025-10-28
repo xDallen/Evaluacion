@@ -8,7 +8,7 @@ import Login from './features/auth/pages/Login';
 import Register from './features/auth/pages/Register';
 import Profile from './features/profile/pages/Profile';
 
-const Home = () => (
+export const Home = () => (
   <div className="min-h-screen bg-gray-50 flex items-center justify-center">
     <div className="text-center">
       <h1 className="text-4xl font-bold text-gray-900 mb-4">
