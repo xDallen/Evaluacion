@@ -72,22 +72,3 @@ export const authService = {
 };
 
 export default api;
-
-// En cada función, agregar console.log para ver qué está pasando:
-
-login: async (credentials) => {
-  try {
-    console.log('Intentando login con:', { email: credentials.email });
-    const response = await api.post('/login', credentials);
-    console.log('Login exitoso:', response.data);
-    
-    if (response.data.token) {
-      setToken(response.data.token);
-    }
-    
-    return response.data;
-  } catch (error) {
-    console.error('Error en login:', error.response?.data);
-    throw new Error(error.response?.data?.message || 'Error en el login');
-  }
-}
